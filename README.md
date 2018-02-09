@@ -2,6 +2,7 @@
 # Language: R
 # Input: prefix (for CSV files for abundances, network and clusters, each of which affect visualization)
 # Output: PNG
+# Tested with: PluMA 1.0, R 3.2.5
 
 PluMA plugin to visualize networks using QGraph.  The plugin takes input in the form of a prefix,
 which prefaces three data files: prefix.csv (the network), prefix.abund.csv (the abundance of each node),
