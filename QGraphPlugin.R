@@ -29,18 +29,6 @@ for (i in 1:nrow(s2)) {
 #s = s + t(s) + diag(s.diag)
 g2 <<- graph.adjacency(s, mode="undirected", weighted=TRUE);
 g3 <<- graph.adjacency(s2, mode="undirected", weighted=TRUE);
-#print(E(g2));
-#print(E(g3));
-#print("TYPEOF");
-#print(typeof(E(g2)));
-#keep <- which(E(g2)$weight > 0);
-#E(g2) <<- E(g2)[keep];
-#print(keep);
-#print(E(g2)[keep]);
-#print(remove);
-#print(E(g2) %in% remove);
-#print(E(g2)[! E(g2) %in% remove ]);
-#print(which(E(g2) %in% (which(E(g2)$weight < 0)) == FALSE)); 
 #adj <- matrix(sample(0:1,10^2,TRUE,prob=c(0.8,0.2)),nrow=10,ncol=10);
 node.shapes <<- "circle"
 node.names <<- colnames(pc);
