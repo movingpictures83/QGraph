@@ -1,0 +1,2 @@
+Prefix plugins/QGraph/example/
+Plugin QGraph inputfile corrP outputfile corrP.qgraph.png
