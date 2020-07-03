@@ -1,2 +1,3 @@
 Prefix plugins/QGraph/example/
-Plugin QGraph inputfile corrP outputfile corrP.qgraph.png
+Plugin QGraph inputfile parameters.txt outputfile corrP.qgraph
+#Plugin QGraph inputfile corrP outputfile corrP.qgraph.pdf
