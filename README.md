@@ -1,12 +1,20 @@
 # QGraph
 # Language: R
-# Input: prefix (for CSV files for abundances, network and clusters, each of which affect visualization)
-# Output: PNG
-# Tested with: PluMA 1.0, R 3.2.5
+# Input: TXT 
+# Output: prefix
+# Tested with: PluMA 1.1, R 4.0.0
 
-PluMA plugin to visualize networks using QGraph.  The plugin takes input in the form of a prefix,
-which prefaces three data files: prefix.csv (the network), prefix.abund.csv (the abundance of each node),
-and prefix.clusters.csv (the network clusters).
+PluMA plugin to visualize networks using QGraph.  
+
+The input takes the form of a TXT file of keyword-value pairs, tab-delimited:
+
+correlations: Correlation network to visualize
+abundances: Amount of each node in each sample (this determines node size)
+clusters: Cluster CSV file
+centralities: CSV file of centralities
+spring: Apply spring method when determining node position (true or false)
+fruchterman-reingold: Apply Fruchterman-Reingold method when determining node position (true or false)
+centrality: Generate centrality graph (true or false)
 
 The network takes the form of a CSV file where rows and columns represent nodes and entry (i, j) 
 represents the weight of the edge from node i to node j.
@@ -34,8 +42,8 @@ Finally, the clusters file takes the following format, with clusters separated b
 "3","Phylum.Firmicutes.0004"
 "4","Family.Porphyromonadaceae.0024"
 
-The QGraph plugin produces its output graph in .png format and uses the Fruchterman-Reingold algorithm
-(Fruchterman and Reingold, 1991) for visualization.  It also colors nodes by cluster and uses size to
-indicate abundance (larger nodes mean higher abundances).  A green edge indicates a positive edge weight
-and a red edge indicates a negative edge weight, with edge thickness denoting magnitude (thicker=higher,
-in both directions).
+Output files will be generated using the prefix:
+prefix.pdf: Graph as a PDF
+prefix.png: Graph as a PNG
+prefix.FR.pdf: Graph after applying Fruchterman-Reingold, if it was marked true
+prefix.centrality.pdf: Graph after coloring based on centrality, if it was marked true
